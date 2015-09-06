@@ -1,4 +1,6 @@
+#!/usr/bin/env bash
 # Add these lines to .bash_profile after installing Dakota.
+
 # Set up Dakota.
 DAKOTA_VERSION=6.1.0
 export DAKOTA_DIR=/usr/local/dakota-$DAKOTA_VERSION.Darwin.i386
