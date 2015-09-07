@@ -1,5 +1,17 @@
 # A .bash_profile for Mac OS X
 
+# Put /usr/local/bin before /usr/bin, and also find ~/bin.
+export PATH=/usr/local/bin:$PATH:~/bin
+
+# Set up IDL.
+if [ -f /Applications/exelis/idl/bin/idl_setup.bash ]; then
+    . /Applications/exelis/idl/bin/idl_setup.bash
+fi
+
+# Other setup variables.
+export EDITOR="emacs -nw"
+export TERM=xterm-256color # get correct colors in emacs -nw
+
 # Without this, my .bashrc isn't found on starting Terminal or iTerm. 
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc

@@ -1,0 +1,10 @@
+# A .bashrc for Mac OS X.
+
+# Source aliases, if present.
+if [ -f ~/.alias ]; then
+   source ~/.alias
+fi
+
+# Set prompt.
+PS1="\[\033]0;\u@\h \w\007\][\u@\h \W]\$ "
+
