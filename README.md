@@ -1,2 +1,2 @@
 # dotfiles
-Dotfiles for Linux and Mac OS X
+Dotfiles and setup scripts for Linux and Mac OS X
