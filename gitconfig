@@ -1,5 +1,7 @@
 [user]
 	name = Mark Piper
 	email = mark.piper@colorado.edu
+[core]
+	editor = emacs
 [color]
 	ui = true
