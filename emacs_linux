@@ -22,6 +22,9 @@
       (cons '("\\.in$" . shell-script-mode)
 	        auto-mode-alist))
 
+(add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2 tab-width
+	                                  2 indent-tabs-mode nil)))
+
 ;; Interactively do things (e.g., switching buffers).
 (require 'ido)
 (ido-mode t)
