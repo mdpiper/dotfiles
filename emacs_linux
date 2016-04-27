@@ -1,6 +1,12 @@
 ;; A customized .emacs file for Linux, with el-get installed for
 ;; package management.
 
+;; Keybinding to refresh buffer. http://emacs.stackexchange.com/a/172
+(global-set-key (kbd "C-c r") (lambda ()
+                                (interactive)
+                                (revert-buffer t t t)
+                                (message "Refreshed buffer")))
+
 ;; Fortran mode.
 ( setq auto-mode-alist ( append '(
 		("\\.f77$". fortran-mode )

@@ -7,6 +7,12 @@
 (add-to-list 'default-frame-alist '(height . 55))
 (add-to-list 'default-frame-alist '(width . 85)) 
 
+;; Keybinding to refresh buffer. http://emacs.stackexchange.com/a/172
+(global-set-key (kbd "C-c r") (lambda ()
+                                (interactive)
+                                (revert-buffer t t t)
+                                (message "Refreshed buffer")))
+
 ;; Use octave-mode for MATLAB source code.
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode)
