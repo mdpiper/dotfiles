@@ -13,6 +13,12 @@
                                 (revert-buffer t t t)
                                 (message "Refreshed buffer")))
 
+;; http://stackoverflow.com/a/3669681
+(defun show-file-name ()
+  "Show the full filepath in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+
 ;; Use octave-mode for MATLAB source code.
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode)
