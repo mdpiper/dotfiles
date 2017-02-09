@@ -37,9 +37,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
-(add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2 tab-width
-	                                  2 indent-tabs-mode nil)))
-
 ;; For Mac OS X. Appears to work for app and terminal version.
 ;; (Keep this before el-get setup?)
 (setq default-directory "~/")
