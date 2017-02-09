@@ -7,11 +7,18 @@
                                 (revert-buffer t t t)
                                 (message "Refreshed buffer")))
 
+;; http://stackoverflow.com/a/3669681
+(defun show-file-name ()
+  "Show the full filepath in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+
 ;; Fortran mode.
-( setq auto-mode-alist ( append '(
+( setq auto-mode-alist
+      (append '(
 		("\\.f77$". fortran-mode )
 		("\\.F77$". fortran-mode )
-) auto-mode-alist ) )
+               ) auto-mode-alist ) )
 
 ;; Use Octave mode for MATLAB.
 (setq auto-mode-alist
