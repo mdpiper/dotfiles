@@ -7,6 +7,14 @@
                                 (revert-buffer t t t)
                                 (message "Refreshed buffer")))
 
+;; https://www.emacswiki.org/emacs/ReformatBuffer
+(defun indent-buffer ()
+  "Reformat buffer."
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max) nil)))
+(global-set-key (kbd "C-c f") 'indent-buffer)
+
 ;; http://stackoverflow.com/a/3669681
 (defun show-file-name ()
   "Show the full filepath in the minibuffer."
