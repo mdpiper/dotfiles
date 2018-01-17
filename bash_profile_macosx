@@ -8,6 +8,16 @@ if [ -f /Applications/exelis/idl/bin/idl_setup.bash ]; then
     . /Applications/exelis/idl/bin/idl_setup.bash
 fi
 
+# Set up Dakota.
+DAKOTA_VERSION=6.1.0
+export DAKOTA_DIR=/usr/local/dakota-$DAKOTA_VERSION.Darwin.i386
+PATH=$PATH:$DAKOTA_DIR/bin:$DAKOTA_DIR/test
+if [ $DYLD_LIBRARY_PATH ]; then
+    DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$DAKOTA_DIR/bin:$DAKOTA_DIR/lib
+else 
+    export DYLD_LIBRARY_PATH=$DAKOTA_DIR/bin:$DAKOTA_DIR/lib
+fi
+
 # Other setup variables.
 export EDITOR="emacs -nw"
 export TERM=xterm-256color # get correct colors in emacs -nw
