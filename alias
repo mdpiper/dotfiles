@@ -1,9 +1,10 @@
 # Aliases
 
-alias l='ls -CF'
-alias k='l'
 alias ls='ls -G'
 alias ll='ls -la'
 alias la='ls -A'
+alias l='ls -CF'
+alias k='l'
 alias lth='ll -t | head'
 alias cls='clear'
+alias grep='grep -n --color=auto'
