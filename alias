@@ -8,3 +8,5 @@ alias k='l'
 alias lth='ll -t | head'
 alias cls='clear'
 alias grep='grep -n --color=auto'
+alias igrep='grep -I'  # ignore binary files
+alias ifgrep='fgrep -I'
