@@ -96,16 +96,23 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
- '(html-mode-hook nil)
- '(tool-bar-mode nil))
-
+ '(html-mode-hook nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "gray5" :foreground "seashell1" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "apple" :family "Menlo"))))
+ '(default ((t)))
+ '(font-lock-builtin-face ((t (:foreground "LightSteelBlue"))))
  '(font-lock-comment-face ((t (:foreground "SteelBlue3"))))
+ '(font-lock-constant-face ((t (:foreground "Aquamarine"))))
+ '(font-lock-function-name-face ((t (:foreground "LightSkyBlue"))))
  '(font-lock-keyword-face ((t (:foreground "brown2"))))
  '(font-lock-string-face ((t (:foreground "burlywood1"))))
- '(link ((t (:foreground "LightBlue3" :underline t)))))
+ '(font-lock-type-face ((t (:foreground "PaleGreen"))))
+ '(font-lock-variable-name-face ((t (:foreground "LightGoldenrod"))))
+ '(isearch ((t (:background "magenta3" :foreground "brown4"))))
+ '(link ((t (:foreground "LightBlue3" :underline t))))
+ '(link-visited ((t (:inherit link :foreground "violet"))))
+ '(minibuffer-prompt ((t (:foreground "cyan"))))
+ '(region ((t (:background "color-20")))))
