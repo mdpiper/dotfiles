@@ -42,6 +42,11 @@
       (cons '("\\.ipynb$" . json-mode)
 	    auto-mode-alist))
 
+;; Use java-mode for SIDL files.
+(setq auto-mode-alist
+      (cons '("\\.sidl$" . java-mode)
+	    auto-mode-alist))
+
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
