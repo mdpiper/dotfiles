@@ -43,6 +43,11 @@
       (cons '("\\.in$" . shell-script-mode)
 	        auto-mode-alist))
 
+;; Use java-mode for SIDL files.
+(setq auto-mode-alist
+      (cons '("\\.sidl$" . java-mode)
+	    auto-mode-alist))
+
 (add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2 tab-width
 	                                  2 indent-tabs-mode nil)))
 
