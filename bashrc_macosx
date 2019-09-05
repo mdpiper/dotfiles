@@ -5,5 +5,8 @@ if [ -f ~/.alias ]; then
    source ~/.alias
 fi
 
-# Set prompt. Only show user@host in tab/title bar.
-PS1="\[\033]0;\u@\h\007\][\u@\h \W]\$ "
+# Set prompt, with colors. Only show user@host in tab/title bar.
+_PS1="\[\033]0;\u@\h\007\][\u@\h \W]\$ "
+mps1="\u@\h"
+mps2="\[\033[01;32m\]$mps1: \[\033[01;33m\]\W\[\033[0m\]"
+PS1="\[\033]0;$mps1\007\][$mps2]\$ "
