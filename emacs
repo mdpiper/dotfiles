@@ -1,11 +1,7 @@
-;; A customized .emacs file for Mac OS X, with el-get installed for
-;; package management.
+;; A customized .emacs file for Linux and macOS, with `el-get`
+;; (https://github.com/dimitri/el-get) for package management.
 
 (setq mouse-yank-at-point t)
-
-;; Make default size 85x55 for my big-ass monitor.
-(add-to-list 'default-frame-alist '(height . 55))
-(add-to-list 'default-frame-alist '(width . 85)) 
 
 ;; Keybinding to refresh buffer. http://emacs.stackexchange.com/a/172
 (global-set-key (kbd "C-c r") (lambda ()
@@ -30,14 +26,44 @@
 ;; Set custom scratch message. https://stackoverflow.com/a/1498292/1563298
 (setq initial-scratch-message ";;\n;; Scratch\n;;\n\n")
 
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+;; Interactively do things.
+(require 'ido)
+(ido-mode t)
+
+;; Setup for el-get; see https://github.com/dimitri/el-get.
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
+
+;; Make meta = command key instead of option key on Mac OS X.
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
+
 ;; https://stackoverflow.com/a/3685541
 (add-hook 'python-mode-hook
-      (lambda ()
-        (setq indent-tabs-mode nil)
-        (setq tab-width 4)
-        (setq python-indent 4)))
+	  (lambda ()
+	    (setq indent-tabs-mode nil)
+	    (setq tab-width 4)
+	    (setq python-indent 4)))
 
-;; Use octave-mode for MATLAB source code.
+(add-hook 'java-mode-hook
+	  (lambda ()	
+	    (setq c-basic-offset 2
+		  tab-width 2
+		  indent-tabs-mode nil)))
+
+;; Use octave-mode for MATLAB.
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode)
 	    auto-mode-alist))
@@ -57,50 +83,34 @@
       (cons '("\\.sidl$" . java-mode)
 	    auto-mode-alist))
 
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+;---------------------------------------------------------------------------
+;; Obsolete configurations
 
 ;; For Mac OS X. Appears to work for app and terminal version.
 ;; (Keep this before el-get setup?)
-(setq default-directory "~/")
+;; (setq default-directory "~/")
 
 ;; Use ssh for tramp instead of scp.
-(setq tramp-default-method "ssh")
+;; (setq tramp-default-method "ssh")
 
 ;; Allow mouse click to switch between split screens (alt to `C-x o`).
 ;; See http://stackoverflow.com/a/6809670/1563298
 ;; [ May consider disabling, since it doesn't work when ssh-ed across to
 ;; river or beach. ]
-(require 'mouse)
-(xterm-mouse-mode t)
-(defun track-mouse (e)) 
-(setq mouse-sel-mode t)
+;; (require 'mouse)
+;; (xterm-mouse-mode t)
+;; (defun track-mouse (e)) 
+;; (setq mouse-sel-mode t)
 
-;; Make meta = command key instead of option key on Mac OS X.
-(setq mac-option-key-is-meta nil)
-(setq mac-command-key-is-meta t)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
+;; Fortran mode.
+;; ( setq auto-mode-alist
+;;        (append '(
+;; 		 ("\\.f77$". fortran-mode )
+;; 		 ("\\.F77$". fortran-mode )
+;; 		 ) auto-mode-alist ) )
 
-;; Interactively do things.
-(require 'ido)
-(ido-mode t)
-
-;; Setup for el-get; see https://github.com/dimitri/el-get.
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-(el-get 'sync)
-
-(add-hook 'java-mode-hook (lambda ()	
-			    (setq c-basic-offset 2
-				  tab-width 2
-				  indent-tabs-mode nil)))
+;; (add-to-list 'default-frame-alist '(height . 40))
+;; (add-to-list 'default-frame-alist '(width . 80))
 
 ;---------------------------------------------------------------------------
 
@@ -109,7 +119,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(require-final-newline t)
  '(blink-cursor-mode nil)
+ '(diff-switches "-u")
  '(column-number-mode t)
  '(html-mode-hook nil)
  '(tool-bar-mode nil))
