@@ -84,35 +84,6 @@
 	    auto-mode-alist))
 
 ;---------------------------------------------------------------------------
-;; Obsolete configurations
-
-;; For Mac OS X. Appears to work for app and terminal version.
-;; (Keep this before el-get setup?)
-;; (setq default-directory "~/")
-
-;; Use ssh for tramp instead of scp.
-;; (setq tramp-default-method "ssh")
-
-;; Allow mouse click to switch between split screens (alt to `C-x o`).
-;; See http://stackoverflow.com/a/6809670/1563298
-;; [ May consider disabling, since it doesn't work when ssh-ed across to
-;; river or beach. ]
-;; (require 'mouse)
-;; (xterm-mouse-mode t)
-;; (defun track-mouse (e)) 
-;; (setq mouse-sel-mode t)
-
-;; Fortran mode.
-;; ( setq auto-mode-alist
-;;        (append '(
-;; 		 ("\\.f77$". fortran-mode )
-;; 		 ("\\.F77$". fortran-mode )
-;; 		 ) auto-mode-alist ) )
-
-;; (add-to-list 'default-frame-alist '(height . 40))
-;; (add-to-list 'default-frame-alist '(width . 80))
-
-;---------------------------------------------------------------------------
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
