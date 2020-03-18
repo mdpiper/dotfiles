@@ -30,6 +30,13 @@
 ;; Set custom scratch message. https://stackoverflow.com/a/1498292/1563298
 (setq initial-scratch-message ";;\n;; Scratch\n;;\n\n")
 
+;; https://stackoverflow.com/a/3685541
+(add-hook 'python-mode-hook
+      (lambda ()
+        (setq indent-tabs-mode nil)
+        (setq tab-width 4)
+        (setq python-indent 4)))
+
 ;; Use octave-mode for MATLAB source code.
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode)
