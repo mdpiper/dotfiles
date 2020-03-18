@@ -1,6 +1,11 @@
 ;; A customized .emacs file for Linux, with el-get installed for
 ;; package management.
 
+(setq mouse-yank-at-point t)
+
+(add-to-list 'default-frame-alist '(height . 40))
+(add-to-list 'default-frame-alist '(width . 80))
+
 ;; Keybinding to refresh buffer. http://emacs.stackexchange.com/a/172
 (global-set-key (kbd "C-c r") (lambda ()
                                 (interactive)
@@ -21,6 +26,9 @@
   (interactive)
   (message (buffer-file-name)))
 
+;; Set custom scratch message. https://stackoverflow.com/a/1498292/1563298
+(setq initial-scratch-message ";;\n;; Scratch\n;;\n\n")
+
 ;; Fortran mode.
 ( setq auto-mode-alist
       (append '(
@@ -31,27 +39,27 @@
 ;; Use Octave mode for MATLAB.
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode)
-	        auto-mode-alist))
+	    auto-mode-alist))
 
 ;; Use json-mode for Jupyter Notebooks.
 (setq auto-mode-alist
       (cons '("\\.ipynb$" . json-mode)
-	        auto-mode-alist))
+	    auto-mode-alist))
 
 ;; Use shell-script-mode for Dakota input files.
 (setq auto-mode-alist
       (cons '("\\.in$" . shell-script-mode)
-	        auto-mode-alist))
+	    auto-mode-alist))
 
 ;; Use java-mode for SIDL files.
 (setq auto-mode-alist
       (cons '("\\.sidl$" . java-mode)
 	    auto-mode-alist))
 
-(add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2 tab-width
-	                                  2 indent-tabs-mode nil)))
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
-;; Interactively do things (e.g., switching buffers).
+;; Interactively do things.
 (require 'ido)
 (ido-mode t)
 
@@ -66,6 +74,11 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
+(add-hook 'java-mode-hook (lambda ()	
+			    (setq c-basic-offset 2
+				  tab-width 2
+				  indent-tabs-mode nil)))
+
 ;---------------------------------------------------------------------------
 
 (custom-set-variables
@@ -73,8 +86,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(require-final-newline t)
  '(blink-cursor-mode nil)
+ '(diff-switches "-u")
  '(column-number-mode t)
+ '(html-mode-hook nil)
  '(tool-bar-mode nil))
 
 (custom-set-faces
