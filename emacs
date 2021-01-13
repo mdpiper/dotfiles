@@ -50,6 +50,10 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
+;; Allow shell-mode prompt color. https://stackoverflow.com/a/25826132
+(set-face-attribute 'comint-highlight-prompt nil
+                    :inherit nil)
+
 ;; https://stackoverflow.com/a/3685541
 (add-hook 'python-mode-hook
 	  (lambda ()
