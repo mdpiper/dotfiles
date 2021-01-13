@@ -1,4 +1,4 @@
-# A .bashrc for Mac OS X.
+# A .bashrc for macOS.
 
 # Source aliases, if present.
 if [ -f ~/.alias ]; then
@@ -6,7 +6,10 @@ if [ -f ~/.alias ]; then
 fi
 
 # Set prompt, with colors. Only show user@host in tab/title bar.
-_PS1="\[\033]0;\u@\h\007\][\u@\h \W]\$ "
 mps1="\u@\h"
 mps2="\[\033[01;32m\]$mps1: \[\033[01;33m\]\W\[\033[0m\]"
-PS1="\[\033]0;$mps1\007\][$mps2]\$ "
+if [ "$INSIDE_EMACS" ]; then
+    PS1="[$mps2]\$ "
+else
+    PS1="\[\033]0;$mps1\007\][$mps2]\$ "
+fi
