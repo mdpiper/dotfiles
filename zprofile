@@ -1,0 +1,1 @@
+# A .zprofile for macOS.
