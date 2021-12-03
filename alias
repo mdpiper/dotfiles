@@ -10,3 +10,7 @@ alias cls='clear'
 alias grep='grep -n --color=auto'
 alias igrep='grep -I'  # ignore binary files
 alias ifgrep='fgrep -I'
+alias dv='dirs -v'
+alias pd='pushd'
+alias tree='tree -C'
+
