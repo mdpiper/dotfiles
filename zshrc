@@ -1,7 +1,5 @@
 # A .zshrc file for macOS.
 
-PS1="[%168F%n@terminus%f: %11F%1~%f]%# "
-
 if [ -f ~/.alias ]; then
    source ~/.alias
 fi
@@ -12,3 +10,8 @@ fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit
 compinit
+
+if [ -f ~/.zprompts ]; then
+   source ~/.zprompts
+   prompt kalmia
+fi
