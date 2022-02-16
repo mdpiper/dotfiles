@@ -3,6 +3,7 @@
 autoload -Uz promptinit
 promptinit
 
+name=%m  # terminus
 gray=248
 yellow=11
 orange=166
@@ -11,19 +12,19 @@ blue=17
 green=22
 
 prompt_smuggler_setup() {
-  PS1="%K{$red}%F{$gray}%n@%m%f%k %F{$yellow}%1~%f %# "
+  PS1="%K{$red}%F{$gray}%n@$name%f%k %F{$yellow}%1~%f %# "
 }
 prompt_eudora_setup() {
-  PS1="[%F{$orange}%n@%m%f: %F{$yellow}%1~%f]%# "
+  PS1="[%F{$orange}%n@$name%f: %F{$yellow}%1~%f]%# "
 }
 prompt_aberdeen_setup() {
-  PS1=$'%K{17}%F{248}[%n@%m]%f%k %F{11}%1~%f \U25BA '
+  PS1='%K{'$blue'}%F{'$gray'}[%n@'$name']%f%k %F{'$yellow'}%1~%f '$'\U25BA '
 }
 prompt_kalmia_setup() {
-  PS1=$'%B%F{22}%n@%m%f%b %F{11}%1~%f \U27A4 '
+  PS1='%B%F{'$green'}%n@'$name'%f%b %F{'$yellow'}%1~%f '$'\U27A4 '
 }
 prompt_ithaca_setup() {
-  PS1=$'%B%F{166}%n@%m%f%b : %F{11}%1~%f \U27A4 '
+  PS1='%B%F{'$orange'}%n@'$name'%f%b : %F{'$yellow'}%1~%f '$'\U27A4 '
 }
 prompt_themes+=( smuggler eudora aberdeen kalmia ithaca )
 
