@@ -10,22 +10,32 @@ orange=166
 red=52
 blue=17
 green=22
+purple=129
 
 prompt_smuggler_setup() {
   PS1="%K{$red}%F{$gray}%n@$name%f%k %F{$yellow}%1~%f %# "
 }
+
 prompt_eudora_setup() {
   PS1="[%F{$orange}%n@$name%f: %F{$yellow}%1~%f]%# "
 }
+
 prompt_aberdeen_setup() {
   PS1='%K{'$blue'}%F{'$gray'}[%n@'$name']%f%k %F{'$yellow'}%1~%f '$'\U25BA '
 }
+
 prompt_kalmia_setup() {
   PS1='%B%F{'$green'}%n@'$name'%f%b %F{'$yellow'}%1~%f '$'\U27A4 '
 }
+
 prompt_ithaca_setup() {
   PS1='%B%F{'$orange'}%n@'$name'%f%b : %F{'$yellow'}%1~%f '$'\U27A4 '
 }
-prompt_themes+=( smuggler eudora aberdeen kalmia ithaca )
+
+prompt_baylor_setup() {
+  PS1='%B%F{'$purple'}%n@'$name'%f%b : %F{'$yellow'}%1~%f '$'\U27A4 '
+}
+
+prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor )
 
 # prompt ithaca
