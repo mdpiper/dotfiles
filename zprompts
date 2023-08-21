@@ -10,7 +10,7 @@ orange=166
 red=52
 blue=17
 green=22
-purple=129
+purple=55
 pink=207
 
 prompt_smuggler_setup() {
