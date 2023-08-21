@@ -11,6 +11,7 @@ red=52
 blue=17
 green=22
 purple=129
+pink=207
 
 prompt_smuggler_setup() {
   PS1="%K{$red}%F{$gray}%n@$name%f%k %F{$yellow}%1~%f %# "
@@ -36,6 +37,10 @@ prompt_baylor_setup() {
   PS1='%B%F{'$purple'}%n@'$name'%f%b : %F{'$yellow'}%1~%f '$'\U27A4 '
 }
 
-prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor )
+prompt_emerald_setup() {
+  PS1="[%F{$pink}%n@$name%f: %F{$gray}%1~%f]%# "
+}
+
+prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor emerald )
 
 # prompt ithaca
