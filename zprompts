@@ -25,7 +25,7 @@ prompt_aberdeen_setup() {
   PS1='%K{'$blue'}%F{'$gray'}[%n@'$name']%f%k %F{'$yellow'}%1~%f '$'\U25BA '
 }
 
-prompt_baylor_setup() {
+prompt_kalmia_setup() {
   PS1='%B%F{'$green'}%n@'$name'%f%b %F{'$yellow'}%1~%f '$'\U27A4 '
 }
 
@@ -33,7 +33,7 @@ prompt_ithaca_setup() {
   PS1='%B%F{'$orange'}%n@'$name'%f%b : %F{'$yellow'}%1~%f '$'\U27A4 '
 }
 
-prompt_kalmia_setup() {
+prompt_baylor_setup() {
   PS1='%B%F{'$purple'}%n@'$name'%f%b : %F{'$yellow'}%1~%f '$'\U27A4 '
 }
 
