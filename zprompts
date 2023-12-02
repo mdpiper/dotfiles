@@ -15,7 +15,7 @@ pink=207
 white=15
 yeller=184
 black=0
-blau=12
+blau=27
 
 prompt_smuggler_setup() {
   PS1="%K{$red}%F{$gray}%n@$name%f%k %F{$yellow}%1~%f %# "
@@ -46,7 +46,7 @@ prompt_emerald_setup() {
 }
 
 prompt_hennepin_setup() {
-  PS1="%F{$red}░%f%F{$orange}░%f%F{$yeller}░%f%F{$green}░%f%F{$blau}░%f%F{$purple}░%f %F{$gray}%n@$name%f ~> "
+  PS1="%F{$red}░%f%F{$orange}░%f%F{$yeller}░%f%F{$green}░%f%F{$blau}░%f%F{$pink}░%f%F{$purple}░%f %F{$gray}%n@$name%f ➤ "
 }
 
 prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor emerald hennepin )
