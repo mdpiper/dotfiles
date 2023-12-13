@@ -49,6 +49,10 @@ prompt_hennepin_setup() {
   PS1="%F{$red}░%f%F{$orange}░%f%F{$yeller}░%f%F{$green}░%f%F{$blau}░%f%F{$pink}░%f%F{$purple}░%f %F{$gray}%n@$name%f : %1~ ➤ "
 }
 
-prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor emerald hennepin )
+prompt_lombardi_setup() {
+  PS1="%F{$green}▓%f%F{$yeller}▓%f %F{$gray}%n@$name%f : %1~ %F{$green}▓%f%F{$yeller}▓%f > "
+}
+
+prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor emerald hennepin lombardi )
 
 # prompt ithaca
