@@ -45,6 +45,10 @@ prompt_emerald_setup() {
   PS1="[%F{$pink}%n@$name%f: %F{$gray}%1~%f]%# "
 }
 
+prompt_mills_setup() {
+  PS1="%F{$gray}>>%f %F{$red}%n@$name%f : %F{$yellow}%1~%f %F{$gray}>>%f "
+}
+
 prompt_hennepin_setup() {
   PS1="%F{$red}░%f%F{$orange}░%f%F{$yeller}░%f%F{$green}░%f%F{$blau}░%f%F{$pink}░%f%F{$purple}░%f %F{$gray}%n@$name%f : %1~ ➤ "
 }
@@ -53,6 +57,6 @@ prompt_lombardi_setup() {
   PS1="%F{$green}▓%f%F{$yeller}▓%f %F{$gray}%n@$name%f : %1~ %F{$green}▓%f%F{$yeller}▓%f > "
 }
 
-prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor emerald hennepin lombardi )
+prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor emerald mills hennepin lombardi )
 
 # prompt ithaca
