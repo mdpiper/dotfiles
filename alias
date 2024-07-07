@@ -13,4 +13,4 @@ alias ifgrep='fgrep -I'
 alias dv='dirs -v'
 alias pd='pushd'
 alias tree='tree -C'
-
+alias diffu='diff -u --color=always'
