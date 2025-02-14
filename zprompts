@@ -57,6 +57,10 @@ prompt_lombardi_setup() {
   PS1="%F{$green}▓%f%F{$yeller}▓%f %F{$gray}%n@$name%f : %1~ %F{$green}▓%f%F{$yeller}▓%f > "
 }
 
-prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor emerald mills hennepin lombardi )
+prompt_gilman_setup() {
+  PS1='%F{'$yellow'}%1~%f '$'\U279C '
+}
+
+prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor emerald mills hennepin lombardi gilman )
 
 # prompt ithaca
