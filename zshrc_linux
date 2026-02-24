@@ -1,0 +1,30 @@
+# A .zshrc file for Linux
+
+unsetopt beep
+bindkey -e
+
+if [ -f ~/.alias ]; then
+   source ~/.alias
+fi
+
+zstyle :compinstall filename '/home/mpiper/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+if [ -f ~/.zprompts ]; then
+   source ~/.zprompts
+   prompt kalmia
+fi
+
+autoload -Uz add-zsh-hook
+
+_precmd_title() {
+    if [[ -n "$SSH_CONNECTION" ]]; then
+	print -Pn "\e]0;%n@%m: %~\a"
+    else
+	print -Pn "\e]0;%~\a"
+    fi
+}
+
+add-zsh-hook precmd _precmd_title
