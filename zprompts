@@ -30,7 +30,7 @@ prompt_aberdeen_setup() {
 }
 
 prompt_kalmia_setup() {
-  PS1='%B%F{'$green'}%n@'$name'%f%b %F{'$yellow'}%1~%f '$'\U27A4 '
+  PS1='%B%F{'$green'}%n@'$name'%f%b %F{'$yellow'}%1~%f ▹ '
 }
 
 prompt_ithaca_setup() {
