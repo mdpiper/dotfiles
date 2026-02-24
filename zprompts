@@ -38,7 +38,7 @@ prompt_ithaca_setup() {
 }
 
 prompt_baylor_setup() {
-  PS1='%B%F{'$purple'}%n@'$name'%f%b : %F{'$yellow'}%1~%f '$'\U27A4 '
+  PS1='%B%F{'$purple'}%n@'$name'%f%b : %F{'$yellow'}%1~%f » '
 }
 
 prompt_emerald_setup() {
