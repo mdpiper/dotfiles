@@ -17,6 +17,8 @@ if [ -f ~/.zprompts ]; then
    prompt kalmia
 fi
 
+test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+
 autoload -Uz add-zsh-hook
 
 _precmd_title() {
