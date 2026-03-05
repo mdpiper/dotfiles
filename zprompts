@@ -26,7 +26,7 @@ prompt_eudora_setup() {
 }
 
 prompt_aberdeen_setup() {
-  PS1='%K{'$blue'}%F{'$gray'}[%n@'$name']%f%k %F{'$yellow'}%1~%f '$'\U25BA '
+  PS1='%K{'$blue'}◾%F{'$gray'}%2~%f%k %F{'$yellow'}≻%f '
 }
 
 prompt_kalmia_setup() {
@@ -54,7 +54,7 @@ prompt_hennepin_setup() {
 }
 
 prompt_lombardi_setup() {
-  PS1="%F{$green}▓%f%F{$yeller}▓%f %F{$gray}%n@$name%f : %1~ %F{$green}▓%f%F{$yeller}▓%f > "
+  PS1="%F{$green}★%f★%F{$yeller}★%f %B%F{$green}%n@$name%f%b : %F{$yeller}%1~%f ⋅ "
 }
 
 prompt_gilman_setup() {
@@ -62,7 +62,7 @@ prompt_gilman_setup() {
 }
 
 prompt_dayton_setup() {
-  PS1="%F{9}★%f %F{$gray}%2~%f %F{14}>%f "
+  PS1="%F{9}★%f %F{246}%2~%f %F{14}>%f "
 }
 
 prompt_themes+=( smuggler eudora aberdeen kalmia ithaca baylor emerald mills hennepin lombardi gilman dayton )
