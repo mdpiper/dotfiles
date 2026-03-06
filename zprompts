@@ -26,7 +26,11 @@ prompt_eudora_setup() {
 }
 
 prompt_aberdeen_setup() {
-  PS1='%K{'$blue'}◾%F{'$gray'}%2~%f%k %F{'$yellow'}≻%f '
+  if [[ $(uname) == "Darwin" ]]; then
+    PS1='%K{'$blue'}%F{'$gray'} ◾%2~%f%k %F{'$yellow'}≻%f '
+  else
+    PS1='%K{'$blue'}◾%F{'$gray'}%2~%f%k %F{'$yellow'}≻%f '
+  fi
 }
 
 prompt_kalmia_setup() {
