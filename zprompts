@@ -58,7 +58,11 @@ prompt_hennepin_setup() {
 }
 
 prompt_lombardi_setup() {
-  PS1="%F{$green}★%f★%F{$yeller}★%f %B%F{$green}%n@$name%f%b : %F{$yeller}%1~%f ⋅ "
+  if [[ $(uname) == "Darwin" ]]; then
+    PS1="%F{$green}★%f%F{$yeller}★%f★ %B%F{$green}%n@$name%f%b : %F{$yeller}%1~%f $ "
+  else
+    PS1="%F{$green}★%f★%F{$yeller}★%f %B%F{$green}%n@$name%f%b : %F{$yeller}%1~%f ⋅ "
+  fi
 }
 
 prompt_gilman_setup() {
