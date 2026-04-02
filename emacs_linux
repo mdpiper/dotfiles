@@ -1,0 +1,37 @@
+;; Emacs settings on anacreon (Ubuntu 24.04 LTS running on MacBook Pro hardware.
+
+;; Keybinding to refresh buffer. http://emacs.stackexchange.com/a/172
+(global-set-key (kbd "C-c r")
+		(lambda ()
+		  (interactive)
+		  (revert-buffer t t t)
+		  (message "Refreshed buffer")))
+
+; Source - https://stackoverflow.com/a/24991705
+; Posted by Yossarian, modified by community. See post 'Timeline' for change history
+; Retrieved 2025-12-05, License - CC BY-SA 4.0
+(require 'package)
+;; Any add to list for package-archives (to add marmalade or melpa) goes here
+(add-to-list 'package-archives 
+    '("MELPA" .
+      "http://melpa.org/packages/"))
+(package-initialize)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(leuven-dark))
+ '(custom-safe-themes
+   '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
+ '(package-selected-packages
+   '(dockerfile-mode cmake-mode yaml-mode spacemacs-theme markdown-mode))
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Ubuntu Sans Mono" :foundry "DAMA" :slant normal :weight regular :height 158 :width normal)))))
+
