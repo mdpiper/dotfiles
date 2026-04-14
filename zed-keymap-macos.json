@@ -20,37 +20,20 @@
   },
   {
     "context": "Editor",
-    "unbind": {
-      "ctrl-w": [
-        "editor::DeleteToPreviousWordStart",
-        {
-          "ignore_newlines": false,
-          "ignore_brackets": false
-        }
-      ]
+    "bindings": {
+      "ctrl-shift-y": "editor::KillRingYank"
     }
   },
   {
     "context": "Editor",
     "unbind": {
-      "ctrl-w": "editor::Cut"
+      "ctrl-y": "editor::KillRingYank"
     }
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-w": "editor::KillRingCut"
-    }
-  },
-  {
-    "context": "Editor",
-    "unbind": {
-      "ctrl-k": "editor::KillRingCut"
-    }
-  },
-  {
-    "bindings": {
-      "ctrl-k": "editor::CutToEndOfLine"
+      "ctrl-y": "editor::Paste"
     }
   }
 ]
