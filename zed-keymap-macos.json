@@ -20,20 +20,12 @@
   },
   {
     "context": "Editor",
-    "bindings": {
-      "ctrl-shift-y": "editor::KillRingYank"
-    }
-  },
-  {
-    "context": "Editor",
     "unbind": {
-      "ctrl-y": "editor::KillRingYank"
-    }
-  },
-  {
-    "context": "Editor",
+      "ctrl-y": "editor::KillRingYank",
+    },
     "bindings": {
-      "ctrl-y": "editor::Paste"
-    }
-  }
+      "ctrl-y": "editor::Paste",
+      "ctrl-shift-y": "editor::KillRingYank",
+    },
+  },
 ]
